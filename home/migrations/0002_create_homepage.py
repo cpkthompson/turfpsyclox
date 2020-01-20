@@ -48,7 +48,6 @@ def remove_homepage(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('home', '0001_initial'),
     ]

@@ -1,6 +1,6 @@
 # Use an official Python runtime as a parent image
 FROM python:3.7
-LABEL maintainer="hello@wagtail.io"
+LABEL maintainer="hello@{{ project_name }}.io"
 
 # Set environment varibles
 ENV PYTHONUNBUFFERED 1
@@ -24,4 +24,4 @@ RUN chown -R wagtail /code
 USER wagtail
 
 EXPOSE 8000
-CMD exec gunicorn turfpsyclox.wsgi:application --bind 0.0.0.0:8000 --workers 3
+CMD exec gunicorn project_name.wsgi:application --bind 0.0.0.0:8000 --workers 3
