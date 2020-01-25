@@ -1,0 +1,10 @@
+body {
+    min-height: 100vh;
+    color: #231f20;
+    font-family: 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+}
+
+.v-toolbar__content {
+    max-width: 1200px;
+    margin: auto;
+}

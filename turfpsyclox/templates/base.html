@@ -6,35 +6,84 @@
     <meta charset="utf-8"/>
     <title>
         {% block title %}
-        {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+            {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
         {% endblock %}
         {% block title_suffix %}
-        {% with self.get_site.site_name as site_name %}
-        {% if site_name %}- {{ site_name }}{% endif %}
-        {% endwith %}
+            {% with self.get_site.site_name as site_name %}
+                {% if site_name %}- {{ site_name }}{% endif %}
+            {% endwith %}
         {% endblock %}
     </title>
     <meta content="" name="description"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link href="{% static 'css/bulma.css' %}" rel="stylesheet" type="text/css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+    <link href="{% static 'css/w3.css' %}" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 
     {# Global stylesheets #}
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css">
 
     {% block extra_css %}
-    {# Override this in templates to add extra stylesheets #}
+        {# Override this in templates to add extra stylesheets #}
     {% endblock %}
 </head>
 
 <body class="{% block body_class %}{% endblock %}">
 {% wagtailuserbar %}
+<div id="app">
+    <v-app-bar class="w3-border-top">
+        <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-{% block content %}{% endblock %}
+        <v-toolbar-title>Turf Psyclox</v-toolbar-title>
+
+        <v-spacer></v-spacer>
+
+        <v-btn text>
+            Services
+        </v-btn>
+        <v-btn text>
+            Insights
+        </v-btn>
+        <v-btn text>
+            About us
+        </v-btn>
+    </v-app-bar>
+    <section class="hero is-medium is-link is-bold">
+        <div class="hero-body">
+            <div class="container w3-content">
+                <h1 class="title">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                </h1>
+                <h2 class="subtitle">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem earum eveniet facilis, fugit
+                    illum ipsam iure laboriosam laudantium porro praesentium quas quasi qui quis sapiente sint ullam
+                    veniam voluptate dignissimos dolore doloribus ducimus facere hic nihil officiis, quaerat quibusdam
+                    quis saepe soluta
+                    tempore ut voluptatem! Doloribus, repudiandae
+                </h2>
+            </div>
+        </div>
+    </section>
+</div>
+{#{% block content %}{% endblock %}#}
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+    })
+</script>
 
 {# Global javascript #}
 <script src="{% static 'js/script.js' %}" type="text/javascript"></script>
 
 {% block extra_js %}
-{# Override this in templates to add extra javascript #}
+    {# Override this in templates to add extra javascript #}
 {% endblock %}
 </body>
 </html>
