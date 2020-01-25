@@ -1,10 +1,25 @@
 body {
     min-height: 100vh;
     color: #231f20;
-    font-family: 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+    font-family: "GoogleSans-Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 .v-toolbar__content {
     max-width: 1200px;
     margin: auto;
+}
+
+.tf-b-font {
+    font-family: "GoogleSans-Bold", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.tf-m-font {
+    font-family: "GoogleSans-Medium", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.tf-r-font {
+    font-family: "GoogleSans-Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+strong, em{
+    font-size: inherit;
 }

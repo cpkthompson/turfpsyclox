@@ -24,52 +24,171 @@
     <link href="{% static 'css/w3.css' %}" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 
-    {# Global stylesheets #}
-    <link href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css">
 
     {% block extra_css %}
-        {# Override this in templates to add extra stylesheets #}
     {% endblock %}
+    <style>
+        @font-face {
+            font-family: 'GoogleSans-Bold';
+            font-display: swap;
+            src: url('{% static 'fonts/GoogleSans/GoogleSans-Bold.ttf' %}') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'GoogleSans-Medium';
+            font-display: swap;
+            src: url('{% static 'fonts/GoogleSans/GoogleSans-Medium.ttf' %}') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'GoogleSans-Regular';
+            font-display: swap;
+            src: url('{% static 'fonts/GoogleSans/GoogleSans-Regular.ttf' %}') format('truetype');
+        }
+
+        * {
+            font-size: 16px;
+        }
+
+        .v-btn {
+            text-transform: none;
+        }
+    </style>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css">
 </head>
 
 <body class="{% block body_class %}{% endblock %}">
 {% wagtailuserbar %}
 <div id="app">
-    <v-app-bar class="w3-border-top">
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-        <v-toolbar-title>Turf Psyclox</v-toolbar-title>
-
+    <v-app-bar class="w3-border-bottom w3-white" flat>
+        <v-toolbar-title class="w3-large"><strong>Turf Psyclox Consulting</strong></v-toolbar-title>
         <v-spacer></v-spacer>
-
-        <v-btn text>
+        <v-btn text class="w3-hide-small tf-r-font">
             Services
         </v-btn>
-        <v-btn text>
+        <v-btn text class="w3-hide-small tf-r-font">
             Insights
         </v-btn>
-        <v-btn text>
+        <v-btn text class="w3-hide-small tf-r-font">
             About us
         </v-btn>
     </v-app-bar>
-    <section class="hero is-medium is-link is-bold">
-        <div class="hero-body">
-            <div class="container w3-content">
-                <h1 class="title">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                </h1>
-                <h2 class="subtitle">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem earum eveniet facilis, fugit
-                    illum ipsam iure laboriosam laudantium porro praesentium quas quasi qui quis sapiente sint ullam
-                    veniam voluptate dignissimos dolore doloribus ducimus facere hic nihil officiis, quaerat quibusdam
-                    quis saepe soluta
-                    tempore ut voluptatem! Doloribus, repudiandae
-                </h2>
-            </div>
+    <div class="w3-center">
+        <div class="w3-hide-large w3-hide-medium">
+            <v-btn text class="w3-bar-item">Services</v-btn>
+            <v-btn text class="w3-bar-item">Insights</v-btn>
+            <v-btn text class="w3-bar-item">About us</v-btn>
         </div>
-    </section>
+    </div>
+    {% block content %}{% endblock %}
+    <footer class="w3-padding-32 w3-padding-large w3-white w3-border-top">
+        <div class="container">
+            <div class="columns is-multiline is-mobile">
+                <div class="column is-6-mobile">
+                    <a href="/"><img src="https://bulma.io/images/placeholders/640x360.png"
+                                     style="width: 92px"></a>
+                    <br>
+                    <div class="w3-margin-top ">
+                        Nii Nortey Quarshie Street,
+                        <br>
+                        <br>
+                        Near Dzorwulu Special School,
+                        <br>
+                        <br>
+                        Dzorwulu – Accra
+
+                    </div>
+
+                </div>
+                <div class="column is-6-mobile is-hidden-mobile">
+                    <br>
+                </div>
+                <div class="column is-6-mobile w3-hide">
+                    <div class="w3-large" style="font-weight: 900">Product</div>
+                    <ul>
+                        <li class="w3-padding-16">
+                            <a>Pricing</a>
+                        </li>
+                        <li class="w3-padding-16">
+                            <a>What's New?</a>
+                        </li>
+                        <li class="w3-padding-16">
+                            <a>FAQs</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column is-6-mobile">
+                    <div class="w3-large" style="font-weight: 900">Company</div>
+                    <ul>
+                        <li class="w3-padding-16">
+                            <a>About us</a>
+                        </li>
+                        <li class="w3-padding-16">
+                            <a>Services</a>
+                        </li>
+                        <li class="w3-padding-16">
+                            <a>Careers</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column is-6-mobile">
+                    <div class="w3-large" style="font-weight: 900">Contact</div>
+                    <ul>
+                        <li class="w3-padding-16">
+                            <a>
+                                Office line:
+                                <br>
+                                +233 (0) 50 433 1771
+                                <br>
+                                +233 (0) 59 601 8889
+                                <br>
+                            </a>
+                        </li>
+                        <li class="w3-padding-16">
+                            <a>
+                                Mobile :
+                                <br>
+                                +233 (0) 24 481 1816
+                                <br>
+                            </a>
+                        </li>
+                        <li class="w3-padding-16">
+                            <a class="" href="mailto:services@turfpsyclox.com">services@turfpsyclox.com</a>
+                        </li>
+                        <li class="w3-padding-16">
+
+                            <a class="w3-text-black" href="https://www.linkedin.com/company/judytechnology/"
+                               rel="noopener noreferrer"
+                               target="_blank"><i
+                                    class="fab fa-2x fa-linkedin"></i></a>
+                            &nbsp;
+                            &nbsp;
+                            <a class="w3-text-black" href="https://facebook.com/judytechnology/"
+                               rel="noopener noreferrer"
+                               target="_blank"><i
+                                    class="fab fa-2x fa-facebook-square"></i></a>
+                            &nbsp;
+                            &nbsp;
+                            <a class="w3-text-black" href="https://twitter.com/judytechnology" rel="noopener noreferrer"
+                               target="_blank"><i
+                                    class="fab fa-2x fa-twitter"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <br class="w3-hide-small">
+            <br class="w3-hide-small">
+            <div class="w3-center">
+                <small class="">
+                    © 2020 Turf Psyclox Limited. All
+                    rights reserved.
+                </small>
+            </div>
+
+        </div>
+    </footer>
+
 </div>
-{#{% block content %}{% endblock %}#}
 <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
 <script>
