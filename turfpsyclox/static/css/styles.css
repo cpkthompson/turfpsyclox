@@ -23,3 +23,6 @@ body {
 strong, em{
     font-size: inherit;
 }
+.is-underlined{
+    text-decoration: underline;
+}

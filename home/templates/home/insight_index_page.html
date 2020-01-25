@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static wagtailuserbar wagtailimages_tags wagtailcore_tags %}
+{% block content %}
+    <h3 class="w3-center tf-b-font w3-xxlarge w3-padding-16">Insights</h3>
+    <div class="columns is-multiline" style="max-width: 1200px;margin: auto auto 50px">
+        {% for foo in 'abcdef' %}
+            <div class="column is-4 w3-padding-large w3-padding-16">
+                <img src="https://bulma.io/images/placeholders/480x480.png">
+                <h3><strong>Lorem ipsum dolor sit amet</strong></h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi cupiditate deserunt
+                    ratione sapiente soluta sunt voluptas.
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
